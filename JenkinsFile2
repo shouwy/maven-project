@@ -40,7 +40,7 @@ pipeline {
 
         stage('Sonarr') {
             steps {
-                withSonarQubeEnv(installationName : 'sonar_qube', credentialsId:'sonar_secret') {
+                withSonarQubeEnv(installationName : 'sonar', credentialsId:'sonar_secret') {
                     // LINUX sh 'mvn -B -DskipTests clean package sonar:sonar'
                     bat 'mvn -B -DskipTests clean package sonar:sonar'                }
             }
